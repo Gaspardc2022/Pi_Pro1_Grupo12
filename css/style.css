@@ -1,4 +1,42 @@
 body{
-    background-color: aqua;
+    background-color: rgb(226, 176, 210);
 }
-p{color: brown;}
+
+.RyF5{height: 300px;
+}
+
+.Trumanshow{
+    height: 300px;
+}
+
+.Simuladores{
+    height: 300px;
+}
+
+.padre_peliculas1{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    list-style-type: none;
+}
+
+.padre_peliculas2{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    list-style-type: none;
+}
+
+.padre_series {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    list-style-type: none;
+}
+
