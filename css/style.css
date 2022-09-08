@@ -6,6 +6,22 @@ body{
     height: 300px;
 }
 
+.Revenant{
+    height: 300px;
+}
+
+.endgame{
+    height: 300px;
+}
+
+.F7{
+    height: 300px;
+}
+
+.Joker{
+    height: 300px;
+}
+
 .Trumanshow{
     height: 300px;
 }
@@ -49,3 +65,21 @@ body{
     list-style-type: none;
 }
 
+.padre_peliculasgeneros{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: left;
+    list-style-type: none;
+}
+
+.padre_seriesgeneros{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: left;
+    list-style-type: none;
+
+}
