@@ -63,6 +63,10 @@ body{
     height: 300px;
 }
 
+.TF{
+    height: 300px;
+}
+
 .padre_peliculas1{
     display: flex;
     flex-wrap: wrap;
