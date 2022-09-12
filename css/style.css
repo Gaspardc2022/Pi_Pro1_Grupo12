@@ -8,6 +8,7 @@ a{
     color: orange;
     font-size: larger;
     text-align: center;
+    align-self: center;
 }
 
 .buscador{
