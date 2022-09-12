@@ -130,11 +130,10 @@ body{
     background-color: rgb(38, 6, 6);
     height: 1in;
 }
-<<<<<<< HEAD
+
 footer{
     background-color:rgb(38, 6, 6);
 }
-=======
 
 .busquedad{
     display: flex;
@@ -166,4 +165,3 @@ footer{
     list-style-type: none;
 
 }
->>>>>>> b800ef5fb86edc6592468d936179968209ca703f
