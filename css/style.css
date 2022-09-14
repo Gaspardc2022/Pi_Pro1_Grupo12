@@ -16,6 +16,11 @@ a{
 .button{
     background-color: black;
     color: white;
+    border:none;
+    border-radius:10px;
+    position:absolute;
+    
+
 }
 
 .home{
