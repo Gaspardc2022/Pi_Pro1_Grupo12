@@ -13,6 +13,16 @@ a{
     text-align: center;
 }
 
+.button{
+    background-color: black;
+    color: white;
+    border:none;
+    border-radius:10px;
+    position:absolute;
+    
+
+}
+
 .home{
     font-size: 30px;
 }
@@ -30,6 +40,10 @@ a{
 }
 
 .gen{
+    font-size: 30px;
+}
+
+.detailgen{
     font-size: 30px;
 }
 
