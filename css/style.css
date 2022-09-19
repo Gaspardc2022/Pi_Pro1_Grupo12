@@ -13,14 +13,42 @@ a{
     text-align: center;
 }
 
-.button{
+.buscardetalle{
+    padding: 10px;
+    position: relative;
+    justify-content: center;
+    box-sizing: border-box;
+    border-radius: 10px;
+    display: flex;
+    
+}
+
+.button1{
     background-color: black;
     color: white;
     border:none;
     border-radius:10px;
-    position:absolute;
-    
+    font-size: 20px;
+    position:relative;
+    display: flex;
 
+}
+
+.añadirfavorito{
+    padding: 260px;
+    align-content: flex-end;
+    position: absolute;
+    box-sizing: border-box;
+    border-radius: 10px;
+    display: flex;
+}
+
+.button{
+    background-color: black;
+    color: white;
+    border: 10px;
+    font-size: 30px;
+    
 }
 
 .home{
@@ -80,6 +108,22 @@ h3{
 
 body{
     background-color: rgb(71, 14, 14);
+}
+
+.box{
+    position: relative;
+    top: 80%;
+    left: 0%;
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 4px;
+    display: flex;
+}
+
+.sinopsis{
+    text-align: justify;
+    padding: 10px;
+    font-size: 18px;
 }
 
 .RyF5{
