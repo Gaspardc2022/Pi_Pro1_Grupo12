@@ -13,6 +13,17 @@ a{
     text-align: center;
 }
 
+
+.box{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: left;
+    list-style-type: none;
+}
+
+
 .buscardetalle{
     padding: 10px;
     position: relative;
@@ -22,6 +33,7 @@ a{
     display: flex;
     
 }
+
 
 .button1{
     background-color: black;
@@ -34,13 +46,21 @@ a{
 
 }
 
+.sinopsis{
+    text-align: justify;
+}
+
+
 .añadirfavorito{
-    padding: 260px;
-    align-content: flex-end;
-    position: absolute;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: left;
+    list-style-type: none;
     box-sizing: border-box;
     border-radius: 10px;
-    display: flex;
+
 }
 
 .button{
@@ -48,6 +68,12 @@ a{
     color: white;
     border: 10px;
     font-size: 30px;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: left;
+    list-style-type: none;
+    box-sizing: border-box;
     
 }
 
@@ -110,24 +136,14 @@ body{
     background-color: rgb(71, 14, 14);
 }
 
-.box{
-    position: relative;
-    top: 80%;
-    left: 0%;
-    padding: 20px;
-    box-sizing: border-box;
-    border-radius: 4px;
-    display: flex;
-}
-
-.sinopsis{
+.g{
     text-align: justify;
-    padding: 10px;
-    font-size: 18px;
+    color: lemonchiffon;
 }
 
 .RyF5{
     height: 300px;
+    position: relative;
 }
 
 .Revenant{
@@ -300,6 +316,11 @@ footer{
 }
 
 .lidetallesseries{
+    padding: 0px;
+    margin: 0px;
+}
+
+.lidetallepeli{
     padding: 0px;
     margin: 0px;
 }
