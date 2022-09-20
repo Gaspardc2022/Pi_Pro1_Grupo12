@@ -13,14 +13,42 @@ a{
     text-align: center;
 }
 
-.button{
+.buscardetalle{
+    padding: 10px;
+    position: relative;
+    justify-content: center;
+    box-sizing: border-box;
+    border-radius: 10px;
+    display: flex;
+    
+}
+
+.button1{
     background-color: black;
     color: white;
     border:none;
     border-radius:10px;
-    position:absolute;
-    
+    font-size: 20px;
+    position:relative;
+    display: flex;
 
+}
+
+.añadirfavorito{
+    padding: 260px;
+    align-content: flex-end;
+    position: absolute;
+    box-sizing: border-box;
+    border-radius: 10px;
+    display: flex;
+}
+
+.button{
+    background-color: black;
+    color: white;
+    border: 10px;
+    font-size: 30px;
+    
 }
 
 .home{
@@ -62,6 +90,8 @@ a{
 
 .pie{
     background-color: black;
+    margin: 10 px;
+    padding: 40px;
 }
 
 
@@ -78,6 +108,22 @@ h3{
 
 body{
     background-color: rgb(71, 14, 14);
+}
+
+.box{
+    position: relative;
+    top: 80%;
+    left: 0%;
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 4px;
+    display: flex;
+}
+
+.sinopsis{
+    text-align: justify;
+    padding: 10px;
+    font-size: 18px;
 }
 
 .RyF5{
@@ -151,6 +197,7 @@ body{
     font-family: Arial, Helvetica, sans-serif;
     color: orange;
     font-size: small;
+    padding-left: 5px;
 }
 
 .padre_peliculas2{
@@ -175,6 +222,8 @@ body{
     font-family: Arial, Helvetica, sans-serif;
     color: orange;
     font-size: small;
+    margin: 0px 0px 0px 20px;
+    padding-left: 5px;
 }
 .creadores{
     font-family: Arial, Helvetica, sans-serif;
@@ -182,11 +231,21 @@ body{
     color: orange;
     text-align: left;
     list-style-type: none;
+    padding: 10px;
+    margin: 10px;
 }
 .textCreadores{
     font-weight: bold;
     font-style: oblique;
+    padding: 5px;
+    margin: 10px;
 }
+
+.iconos2{
+    padding: 10px;
+    margin: 10px;
+}
+
 .espacioPie{
     color: rgb(38, 6, 6);
     background-color: rgb(38, 6, 6);
@@ -216,6 +275,7 @@ footer{
     justify-content: space-evenly;
     align-items: left;
     list-style-type: none;
+    margin: 10px 0px 0px 0px;
 }
 
 .padre_seriesgeneros{
@@ -225,5 +285,21 @@ footer{
     justify-content: space-evenly;
     align-items: left;
     list-style-type: none;
+}
 
+.encabezado{
+    margin: 50px 0px 0px 0px;
+}
+.subtitle{
+    background-color: rgb(38, 6, 6);;
+    font-size: 30px;
+}
+
+.containerpadre{
+    margin: 0px;
+}
+
+.lidetallesseries{
+    padding: 0px;
+    margin: 0px;
 }
