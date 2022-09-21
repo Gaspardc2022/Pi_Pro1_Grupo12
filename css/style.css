@@ -1,16 +1,18 @@
 header{
     background-color: rgb(38, 6, 6);
+    border-radius: 15px;
 }
 
 a{
     text-decoration: none;
     font-family: Arial, Helvetica, sans-serif;
-    color: orange;
+    color: black;
     font-size: 46px;
 }
 
 .block{
     text-align: center;
+    background-color: rosybrown;
 }
 
 
@@ -39,7 +41,7 @@ a{
     background-color: black;
     color: white;
     border:none;
-    border-radius:10px;
+    border-radius:15px;
     font-size: 20px;
     position:relative;
     display: flex;
@@ -48,33 +50,25 @@ a{
 
 .sinopsis{
     text-align: justify;
-}
-
-
-.añadirfavorito{
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: left;
-    list-style-type: none;
-    box-sizing: border-box;
-    border-radius: 10px;
-
+    color: black;
+    font-weight: 600;
 }
 
 .button{
     background-color: black;
     color: white;
     border: 10px;
-    font-size: 30px;
+    font-size: 20px;
+    border-radius: 15px;
     flex-wrap: wrap;
     flex-direction: row;
-    justify-content: space-evenly;
-    align-items: left;
-    list-style-type: none;
-    box-sizing: border-box;
+    justify-content: space-around;
+    align-items: center;
     
+}
+
+strong{
+    color: rgb(10, 0, 150);
 }
 
 .home{
@@ -102,12 +96,13 @@ a{
 }
 
 .logo{
-    display: block;
+    display: flex;
     margin-left: auto;
     margin-right: auto;
     width: 20%; 
     align-items: center;
     justify-items: center;   
+    border-radius: 25px;
 }
 .buscador{
     font-family: Arial, Helvetica, sans-serif;
@@ -118,6 +113,7 @@ a{
     background-color: black;
     margin: 10 px;
     padding: 40px;
+    border-radius: 15px;
 }
 
 
@@ -126,6 +122,7 @@ i{color: orange;
 
 h2{background-color: rgb(38, 6, 6);
 color: orange;
+border-radius: 15px;
 }
 
 h3{ 
@@ -208,6 +205,13 @@ body{
     height: 300px;
 }
 
+#video{
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
 .padre_peliculas1{
     display: flex;
     flex-wrap: wrap;
@@ -218,6 +222,153 @@ body{
     font-family: Arial, Helvetica, sans-serif;
     color: orange;
     font-size: small;
+    padding-left: 5px;
+}
+
+.articulopeliculas1{
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(167, 59, 59);
+    border-radius: 15px;
+    color: blue;
+    padding-left: 5px;
+}
+
+.articulopeliculas2{
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgba(243, 128, 34, 0.521);
+    border-radius: 15px;
+    color: green;
+    padding-left: 5px;
+
+}
+
+.articulopeliculas3{
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(14, 101, 141);
+    border-radius: 15px;
+    color: blueviolet;
+    padding-left: 5px;
+}
+
+.articulopeliculas4{
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(127, 230, 31);
+    border-radius: 15px;
+    color: black;
+    padding-left: 5px;
+}
+
+.articulopeliculas5{
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(177, 0, 184);
+    border-radius: 15px;
+    color: brown;
+    padding-left: 5px;
+}
+
+.articuloseries1{
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(214, 245, 101);
+    border-radius: 15px;
+    color: rgb(255, 94, 0);
+    padding-left: 5px;
+}
+
+.articuloseries2{
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(56, 165, 255);
+    border-radius: 15px;
+    color: rgb(69, 2, 107);
+    padding-left: 5px;
+}
+
+.articuloseries3{
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(113, 219, 122);
+    border-radius: 15px;
+    color: rgb(26, 83, 74);
+    padding-left: 5px;
+}
+
+.articuloseries4{
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(100, 57, 255);
+    border-radius: 15px;
+    color: rgb(12, 12, 39);
+    padding-left: 5px;
+}
+
+.articuloseries5{
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(255, 112, 112);
+    border-radius: 15px;
+    color: rgb(189, 170, 0);
+    padding-left: 5px;
+}
+
+
+.articulofavoritos{
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(0, 81, 255);
+    border-radius: 15px;
+    color: rgb(0, 230, 11);
+    padding-left: 5px;
+
+}
+
+.Peliculas_generos1{
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(60, 66, 122);
+    border-radius: 15px;
+    color: rgb(10, 25, 39);
+    padding-left: 5px;
+
+}
+
+.Series_generos1{
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(255, 180, 94);
+    border-radius: 15px;
+    color: rgb(66, 22, 25);
     padding-left: 5px;
 }
 
@@ -271,10 +422,12 @@ body{
     color: rgb(38, 6, 6);
     background-color: rgb(38, 6, 6);
     height: 1in;
+    border-radius: 15px;
 }
 
 footer{
     background-color:rgb(38, 6, 6);
+    border-radius: 15px;
 }
 
 .busquedad{
@@ -311,25 +464,34 @@ footer{
 
 .encabezado{
     margin: 50px 0px 0px 0px;
+    border-radius: 15px;
 }
 .subtitle{
     background-color: rgb(38, 6, 6);;
     font-size: 30px;
+    border-radius: 15px;
 }
 
 .containerpadre{
     margin: 10px 0px 0px 0px;
     padding: 0px;
+}
+
+.containerpadre2{
+    display: flex;
+    margin: 10px 5px 5px 5px;
+    padding: 20px;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
     
 }
 
-
-.lidetallesseries{
-    padding: 0px;
-    margin: 0px;
-}
-
-.lidetallepeli{
-    padding: 0px;
-    margin: 0px;
+.containerpadre3{
+    display: flex;
+    margin: 10px 5px 5px 5px;
+    padding: 20px;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
