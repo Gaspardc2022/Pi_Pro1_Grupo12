@@ -206,10 +206,13 @@ body{
 }
 
 #video{
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: space-evenly;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%; 
     align-items: center;
+    justify-items: center;   
+    border-radius: 25px;
 }
 
 .padre_peliculas1{
@@ -495,3 +498,17 @@ footer{
     flex-wrap: wrap;
     justify-content: space-around;
 }
+
+
+@media (max-width: 400px) {
+    .facet_sidebar {
+      display: none;
+    }
+  }
+
+@media only screen and (max-width: 400px) {
+    body {background-color: lightblue; width: 90%;}} 
+
+@media only screen and (max-width: 400px) {
+    [id="video"] {width: 100%;}}
+
