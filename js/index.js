@@ -1,3 +1,4 @@
+
 let apiKey = '74fa5f666f80e0a07da9241346d3088b'
 let url = `https://api.themoviedb.org/3/movie/550?api_key=${apiKey}`
 
@@ -24,5 +25,3 @@ return data;
     console.log(error);
     return error;
 })
-
-
