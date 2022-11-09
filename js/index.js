@@ -13,12 +13,18 @@ fetch(url)
     for (let i = 0; i < 5; i ++) {
         console.log(data.result[i]);
         movies += `<article>
-        #poner imagen,titulo,boton
-
+                    <img src="" alt="",
+                    <h1>Titulo:${data.results[i].title}</h1>
+                    <p>Fecha: ${data.results[i].title}</p>
+                    <a href="./detalle.html?idPersonaje=${data.results[i].id}">
+                        <button>
+                            Ver mas
+                        </button>
+                    </a>
         </article>`
+    
+        container.innerHTML = movies;
     }
-    container.innerHTML = movies;
-
 return data;
 })
 .catch(function (error) {
