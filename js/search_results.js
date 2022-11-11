@@ -1,5 +1,7 @@
 let form = document.querySelector(".buscador")
 let campoBuscar= document.querySelector(".cartel")
+let nombrePelicula = 
+
 form.addEventListener (submit, function (event){
     event.preventDefault();
     if (campoBuscar.value == ""){
@@ -12,7 +14,7 @@ form.addEventListener (submit, function (event){
 })
 
 let apiKey = '74fa5f666f80e0a07da9241346d3088b'
-let url = `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}`
+let url = `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&language=en-US&query=${nombrePelicula}&page=1&include_adult=false`
 
 fetch(url)
 .then(function (respuesta) {
@@ -26,7 +28,7 @@ return data;
     return error;
 })
     
-let urlSeries = `https://api.themoviedb.org/3/search/tv?api_key=${apiKey}`
+let urlSeries = `https://api.themoviedb.org/3/search/tv?api_key=${apiKey}&language=en-US&query=${nombrePelicula}&page=1&include_adult=false`
 
 fetch(url)
 .then(function (respuesta) {
