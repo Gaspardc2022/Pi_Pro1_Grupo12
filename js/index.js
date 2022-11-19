@@ -61,7 +61,7 @@ fetch(urlSeries)
                             </a>
                             <h3>${data.results[i].first_air_date}</h3>
             
-                            <a href="./_detail.html?idpelicula=${data.results[i].id}">
+                            <a href="./series_detail.html?idpelicula=${data.results[i].id}">
                                     <img src="https://image.tmdb.org/t/p/w185/${data.results[i].poster_path}" alt="">
                             </a>
            
