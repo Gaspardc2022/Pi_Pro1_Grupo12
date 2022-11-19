@@ -89,8 +89,19 @@ a{
     
 }
 
-
-
+.popularmovies{
+    display:flex;
+    justify-content: space-between;
+}
+.unapeli{
+    display: flex;
+    flex-direction: column;
+    width: 18%;
+}
+.popularseries{
+    display:flex;
+    justify-content: space-between;
+}
 strong{
     color: rgb(10, 0, 150);
 }
@@ -127,6 +138,11 @@ strong{
     align-items: center;
     justify-items: center;   
     border-radius: 25px;
+}
+
+.lista{
+    display:flex;
+    align-items: center;
 }
 .buscador{
     font-family: Arial, Helvetica, sans-serif;
