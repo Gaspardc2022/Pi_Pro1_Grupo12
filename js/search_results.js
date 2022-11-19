@@ -1,43 +1,35 @@
-let form = document.querySelector(".buscador")
-let campoBuscar= document.querySelector(".cartel")
-let nombrePelicula = 
+let qs      = location.search;
+let qsObj   = new URLSearchParams(qs);  
+let movies  = qsObj.get('busqueda'); 
 
-form.addEventListener (submit, function (event){
-    event.preventDefault();
-    if (campoBuscar.value == ""){
-        alert("No se introdujo palabras")
-    } else if (campoBuscar.value.length <= 3)
-    alert("debes escribir mas de 3 caracteres");
-    else {this.submit()}
-
-
-})
-
-let apiKey = '74fa5f666f80e0a07da9241346d3088b'
-let url = `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&language=en-US&query=${nombrePelicula}&page=1&include_adult=false`
+let api_key = '74fa5f666f80e0a07da9241346d3088b'
+let url     = `https://api.themoviedb.org/3/search/movie?api_key=${api_key}`;
 
 fetch(url)
-.then(function (respuesta) {
-    return respuesta.json();})
-
-.then(function (data) {
-return data;
+    .then(function(response) {
+    return response.json();
 })
-.catch(function (error) {
-    console.log(error);
-    return error;
-})
+    .then(function(data) {
     
-let urlSeries = `https://api.themoviedb.org/3/search/tv?api_key=${apiKey}&language=en-US&query=${nombrePelicula}&page=1&include_adult=false`
+        let arraymovies = data.results;
 
-fetch(url)
-.then(function (respuesta) {
-    return respuesta.json();})
+        let seccion = document.querySelector('.busquedapeliculas');
+        let allmovies = [];
 
-.then(function (data) {
-return data;
+        for(let i=0; i< 3; i++){
+            allmovies += `  <article>
+                                <a href="./movie_detail.html?buscadordepeliculas=${arraymovies[i].id}">
+                                
+                                    <img src="https://image.tmdb.org/t/p/w185/${arraymovies[i].poster_path}" alt='${arraymovies[i].name}' />
+                                    <p>Titulo: ${arraymovies[i].name} </p>
+                                    <p>Fecha de estreno: ${arraymovies[i].release_date} </p>
+                                </a>
+                            </article>`
+        }
+        seccion.innerHTML = allmovies;
+        return data;
 })
-.catch(function (error) {
-    console.log(error);
-    return error;
-})
+    .catch(function(error) {
+        console.log(error);
+        return error;
+});

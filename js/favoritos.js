@@ -79,7 +79,6 @@ function buscarYMostrarFavoritos(id){
 //Boton de Favoritos
 //Creo array a rellenar de peliculas favoritas
 let peliculasFav = []
-//Recupero el storage
 let recuperoStorage = localStorage.getItem("favoritosPeliculas");
 let recuperoStorage1 = localStorage.getItem("favoritosSerie");
 //Reviso si el id ya esta en favoritos
