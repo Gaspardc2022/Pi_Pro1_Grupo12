@@ -55,7 +55,8 @@ fetch(urlwatch)
 
 let buy = ""
 let flat = ""
-if (data.results.US){
+if (data.results.US)
+{
     for (let i = 0; i<data.results.US.buy?.length;i++){
         buy += `<li class = "lista">
         <img class="logowatch" src="https://image.tmdb.org/t/p/w185/${data.results.US.buy[i].logo_path}" alt="${data.results.US.buy[i].provider_name}">
