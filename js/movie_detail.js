@@ -1,6 +1,9 @@
 let queryselector = location.search;
+"encuentra la parte de la URL que se encuentra despues del signo de pregunta"
 let objectqueryselector = new URLSearchParams(queryselector)
+"transforma la queryselector en un objeto literal"
 let idmovie = objectqueryselector.get("idpelicula")
+"se queda solo con el numero"
 console.log(idmovie)
 let title = document.querySelector(".subtitle")
 let image = document.querySelector("#image")
