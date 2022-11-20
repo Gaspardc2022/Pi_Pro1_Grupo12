@@ -1,6 +1,6 @@
 let queryselector = location.search;
 let objectqueryselector = new URLSearchParams(queryselector)
-let idmovie = objectqueryselector.get("idpelicula")
+let idmovie = objectqueryselector.get("idseries")
 console.log(idmovie)
 let title = document.querySelector(".subtitle")
 let image = document.querySelector("#image")
@@ -129,38 +129,42 @@ fetch(urlRecomendaciones)
         
     }
     articulo.innerHTML+=`<br> <strong> Recomendaciones: </strong>${allMovies}`
+
+    let favorites = []
+    
+    let boton = document.querySelector(".button")
+    if(localStorage.getItem("favoritesseries") != null && localStorage.getItem("favoritesseries")) {
+        favorites = JSON.parse(localStorage.getItem("favoritesseries"))
+    }
+    
+     if(favorites.includes(idmovie)) {
+        boton.innerText = "Quitar de mis favoritos";
+    }
+    
+    boton.addEventListener("click", function(e) {
+        e.preventDefault();
+    
+        if(favorites.includes(idmovie)) {
+            let index = favorites.indexOf(idmovie);
+            favorites.splice(index, 1);
+            boton.innerText = "Agregar a Favoritos";}
+    
+        else{
+            favorites.push(idmovie)
+            boton.innerText = "Quitar de Favoritos";
+    
+        }
+    
+        let favoritestoSTR = JSON.stringify(favorites);
+        localStorage.setItem("favoritesseries", favoritestoSTR);
+    console.log(localStorage)
+    
+    })
+
+
 })
+
 .catch(function(error) {
     return error;
 })
 
-let favorites = null
-let storagerecovery = localStorage.getItem("favorites")
-
-if(storagerecovery != null) {
-    favorites = JSON.parse(storagerecovery)
-}
-
-else if(favorites.includes(idmovie)) {
-    favorite.innerText = "Quitar de mis favoritos";
-}
-
-button.addEventListener("click", function(e) {
-    e.preventDefault();
-
-    if(favorites.includes(idmovie)) {
-        let index = favorites.indexOf(idmovie);
-        favorites.splice(index, 1);
-        favorite.innerText = "Agregar a Favoritos";}
-
-    else{
-        favorites.push(idmovie)
-        favorite.innerText = "Quitar de Favoritos";
-
-    }
-
-    let favoritestoSTR = JSON.stringify(favorites);
-    localStorage.setItem("favoritos", favoritestoSTR);
-
-
-})
