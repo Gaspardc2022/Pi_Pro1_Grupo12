@@ -1,131 +1,70 @@
-console.log('favoritosPeliculas');
-console.log('favoritosSerie')
 
-let favoritosPelisStorage = localStorage.getItem("favoritosPeliculas");
-let favoritosSerieStorage = localStorage.getItem("favoritosSerie")
+let apiKey = '74fa5f666f80e0a07da9241346d3088b'
 
-let favoritosPeliculas = JSON.parse(favoritosPelisStorage);
-let favoritosSerie = JSON.parse(favoritosSerieStorage);
+if(localStorage.getItem("favoritesmovie") != null && localStorage.getItem("favoritesmovie")) {
+    favoritesmovie = JSON.parse(localStorage.getItem("favoritesmovie"))
+} 
+if(localStorage.getItem("favoritesseries") != null && localStorage.getItem("favoritesseries")) {
+    favoritesseries = JSON.parse(localStorage.getItem("favoritesseries"))
+}
 
-console.log(favoritosPeliculas); 
-console.log(favoritosSerie); 
+console.log(favoritesmovie); 
+console.log(favoritesseries); 
 
-let section = document.querySelector('.lista');
-let favoritos = '';
+let listapeliculas = document.querySelector(".peliculas")
+let listaseries = document.querySelector(".series")
 
-if(favoritosPeliculas == null || favoritosPeliculas.length == 0) {    
-    section.innerHTML='<p>No hay favoritos seleccionados</p>'
+if(favoritesmovie == null && favoritesmovie.length == 0) {    
+    listapeliculas.innerHTML='<p>No hay favoritos seleccionados</p>'
 } else {
-    for (let i=0; i<favoritosPeliculas.length; i++){
-        buscarYMostrarFavoritos(favoritosPeliculas[i]);
+    for (let i=0; i<favoritesmovie.length; i++){
+        fetch(`https://api.themoviedb.org/3/movie/${favoritesmovie[i]}?api_key=${apiKey}`)
+.then(function(response){
+    return response.json();
+})
+.then(function(data){
+    console.log(data);
+listapeliculas.innerHTML +=`
+<article class="articulofavoritos">
+<a href="./movie_detail.html?idpelicula=${data.id}"><h3>${data.title}</h3></a>
+<a href="./movie_detail.html?idpelicula=${data.id}"><img class="RyF5" src="https://image.tmdb.org/t/p/w185/${data.poster_path}" alt="${data.title}"></a>
+
+
+
+</article>
+ `
+
+
+})
+.catch(function(error) {
+    return error;
+})
     }
 }
-
-function buscarYMostrarFavoritos(id){
-    let url = `https://api.themoviedb.org/3/tv/{tv_id}?api_key=bd47c5f8586064b310c2211d383a653d&language=${id}`
-    
-    fetch(url)
-        .then(function(response){
-            return response.json();
-        })
-        .then(function(data){
-            console.log(data);
-            favoritosPeliculas += `<article>
-                <img src=${data.image}>
-                <p>Calificacion: ${data.vote_average}</p>
-                <p>Estreno: ${data.release_date}</p>
-                <p>Duracion: ${data.runtime}</p>
-                <p>Sinopsis: ${data.overview}</p>
-                <p>Genero: ${data.genero}</p>
-            </article>`
-            section.innerHTML = favoritosPeliculas
-        })
-        .catch( function(error){
-            console.log(error);
-        })
-}
-
-if(favoritosSerie == null || favoritosSerie.length == 0){
-    section.innerHTML='<p>No hay favoritos seleccionados</p>'
+if(favoritesseries == null && favoritesseries.length == 0) {    
+    listaseries.innerHTML='<p>No hay favoritos seleccionados</p>'
 } else {
-    for (let i=0; i<favoritosSerie.length; i++){
-        buscarYMostrarFavoritos(favoritosSerie[i]);
-    }
-}
-
-function buscarYMostrarFavoritos(id){
-    let url = `https://api.themoviedb.org/3/tv/100?api_key=a070d8766877ff453cfcafc5a8c99cec=${id}`
-    
-    fetch(url)
-        .then(function(response){
-            return response.json();
-        })
-        .then(function(data){
-            console.log(data);
-            favoritosSerie += `<article>
-                <img src=${data.image}>
-                <p>Calificacion: ${data.vote_average}</p>
-                <p>Estreno: ${data.release_date}</p>
-                <p>Duracion: ${data.runtime}</p>
-                <p>Sinopsis: ${data.overview}</p>
-                <p>Genero: ${data.genero}</p>
-            </article>`
-            section.innerHTML = favoritosSerie
-        })
-        .catch( function(error){
-            console.log(error);
-        })
-}
-//Boton de Favoritos
-//Creo array a rellenar de peliculas favoritas
-let peliculasFav = []
-let recuperoStorage = localStorage.getItem("favoritosPeliculas");
-let recuperoStorage1 = localStorage.getItem("favoritosSerie");
-//Reviso si el id ya esta en favoritos
-if(recuperoStorage != null){
-    favoritosPeliculas = JSON.parse(recuperoStorage);
-    favoritosSerie = JSON.parse(recuperoStorage1);
-}
-//Capturo el elemento DOM
-let fav = document.querySelector('.fav');
-let botonFav = document.querySelector('.botonFav');
-
-if(favoritosPeliculas.includes(id)){
-    botonFav.innerText = 'Quitar de favoritos'
-}
-
-if(favoritosSerie.includes(id)){
-    botonFav.innerText = 'Quitar de favoritos'
-}
-
-fav.addEventListener('click', function(evento){
-    evento.preventDefault();
-    
-    if(favoritosPeliculas.includes(id)){
-        let indice = favoritosPeliculas.indexOf(id);
-        favoritosPeliculas.splice(indice, 1);
-        botonFav.innerText = 'Agregar a favoritos'
-    } else {
-        favoritosPeliculas.push(id);
-        botonFav.innerHTML = 'Quitar de favoritos'
-    }
-    console.log(favoritosPeliculas);
-    let favsToString =JSON.stringify(favoritosPeliculas);
-    localStorage.setItem('favoritosPeliculas', favsToString)
+    for (let i=0; i<favoritesseries.length; i++){
+        fetch(`https://api.themoviedb.org/3/tv/${favoritesseries[i]}?api_key=${apiKey}`)
+.then(function(response){
+    return response.json();
 })
+.then(function(data){
+    console.log(data);
+listaseries.innerHTML +=`
+<article class="articulofavoritos">
+<a href="./series_detail.html?idseries=${data.id}"><h3>${data.name}</h3></a>
+<a href="./series_detail.html?idseries=${data.id}"><img class="RyF5" src="https://image.tmdb.org/t/p/w185/${data.poster_path}" alt="${data.name}"></a>
 
-fav.addEventListener('click', function(evento){
-    evento.preventDefault();
-    
-    if(favoritosSerie.includes(id)){
-        let indice = favoritosSerie.indexOf(id);
-        favoritosSerie.splice(indice, 1);
-        botonFav.innerText = 'Agregar a favoritos'
-    } else {
-        favoritosSerie.push(id);
-        botonFav.innerHTML = 'Quitar de favoritos'
-    }
-    console.log(favoritosSerie);
-    let favsToString =JSON.stringify(favoritosSerie);
-    localStorage.setItem('favoritosSerie', favsToString)
+
+
+</article>
+ `
+
+
 })
+.catch(function(error) {
+    return error;
+})
+    }
+}
