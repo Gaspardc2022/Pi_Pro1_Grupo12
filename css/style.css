@@ -113,6 +113,15 @@ a{
     flex-direction: column;
     width: 18%;
 }
+
+.unaserie{
+    display: flex;
+    flex-direction: column;
+    width: 18%;
+
+}
+
+
 .popularseries{
     display:flex;
     justify-content: space-between;
@@ -215,6 +224,26 @@ h3{
 h2{
     text-align: center; 
     font-size: 25px;
+}
+
+.subtitulos{
+    text-align: center; 
+    font-size: 25px;
+    color: antiquewhite;
+}
+
+.subtitulosp{
+    text-align: center; 
+    font-size: 25px;
+    color: antiquewhite;
+    font-weight: bold;
+}
+
+.busquedaresultados{
+    text-align: center; 
+    font-size: 25px;
+    color: beige;
+
 }
 
 body{
@@ -325,6 +354,33 @@ body{
 }
 
 .Peliculas_masvistas{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    list-style-type: none;
+    font-family: Arial, Helvetica, sans-serif;
+    color: orange;
+    font-size: small;
+    padding-left: 5px;
+}
+
+.generos_series1{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    list-style-type: none;
+    font-family: Arial, Helvetica, sans-serif;
+    color: orange;
+    font-size: small;
+    padding-left: 5px;
+}
+
+
+#resultadoBusqueda{
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;

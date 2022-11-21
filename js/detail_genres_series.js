@@ -5,8 +5,7 @@ let id = qslo.get ('id');
 
 let genero = qslo.get ('genre_ids');
 
-let url = `https://api.themoviedb.org/3/discover/movie?api_key=74fa5f666f80e0a07da9241346d3088bwith_genres=${id}`
-
+let url = `https://api.themoviedb.org/3/discover/tv?api_key=18244799e13812364e948bca9d25aff1&with_genres=${id}`
 fetch(url)
     .then(function(response){
         return response.json();
@@ -22,19 +21,24 @@ fetch(url)
         for (let i = 0; i < info.length; i++) {
 			console.log(info[i]);
 			detalle_generos +=
-				`<li class="movies">
-            <ul class="movie">
-                <a href="">
-                    <img class="imgmovie"  src="${"https://image.tmdb.org/t/p/original"+data.results[i].poster_path}" alt="">
-                    <li>${info[i].title}</li>
-                </a>
-                <li>${info[i].release_date}</li>
-                <li>Rating: ${info[i].vote_average}</li>
-            </ul>
-        </li>`
+                                `
+                                <article class= "unaserie">
+                                        <a href="./series_detail.html?idserie=${data.results[i].id}">
+                                            <h2>${data.results[i].name}</h2>
+                                        </a>
+                                        <a href="./series_detail.html?idserie=${data.results[i].id}">
+                                            <img class="imgserie"  src="https://image.tmdb.org/t/p/w185/${data.results[i].poster_path}" alt="">
+                                            <li class="subtitulosp">${info[i].name}</li>
+                                        </a>
+                                        <a href="./series_detail.html?idserie=${data.results[i].id}">
+                                            <li class="subtitulos">${info[i].first_air_date}</li>
+                                            <li class= "subtitulos">Rating: ${info[i].vote_average}</li>
+                                        </a>
+                                </article>
+                                `
         }
         
-        document.querySelector('.popmovie').innerHTML = detalle_generos
+        document.querySelector('.generos_series1').innerHTML = detalle_generos
 
     })
     .catch(function(error){

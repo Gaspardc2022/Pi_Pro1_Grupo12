@@ -22,19 +22,22 @@ fetch(url)
         for (let i = 0; i < info.length; i++) {
 			console.log(info[i]);
 			detalle_generos +=
-				`<li class="movies">
-            <ul class="movie">
-                <a href="">
-                    <img class="imgmovie"  src="${"https://image.tmdb.org/t/p/original"+data.results[i].poster_path}" alt="">
-                    <li>${info[i].title}</li>
-                </a>
-                <li>${info[i].release_date}</li>
-                <li>Rating: ${info[i].vote_average}</li>
-            </ul>
-        </li>`
+                                `<article class= "unapeli">
+                                    <a href="./movie_detail.html?idpelicula=${data.results[i].id}">
+                                        <h2>${data.results[i].title}</h2>
+                                    </a>
+                                    <a href="./movie_detail.html?idpelicula=${data.results[i].id}">
+                                        <img class="imgmovie"  src="https://image.tmdb.org/t/p/w185/${data.results[i].poster_path}" alt="">
+                                        <li class="subtitulosp">${info[i].title}</li>
+                                    </a>
+                                    <a href="./movie_detail.html?idpelicula=${data.results[i].id}">
+                                        <li class="subtitulos">${info[i].release_date}</li>
+                                        <li class= "subtitulos">Rating: ${info[i].vote_average}</li>
+                                    </a>
+                                </article>`
         }
         
-        document.querySelector('.popmovie').innerHTML = detalle_generos
+        document.querySelector('.Peliculas_masvistas').innerHTML = detalle_generos
 
     })
     .catch(function(error){

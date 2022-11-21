@@ -14,11 +14,10 @@
 <body>
     <header class="encabezado">
 
-        <form class="buscador" action="search_results.html" method="get">
-            <div>
-                <label for="buscar">Buscar:</label>
-                <input id="buscar" type="text" name="buscar" value="">
-            </div>
+        <form action="./search_results.html" method="get">
+            <input type="text" name="busqueda" id="busqueda" placeholder="Buscar">
+            <button type="submit">Enviar</button>
+    
         </form>
         <br>
         <div class="block">
@@ -37,25 +36,10 @@
     <section class="containerpadre">
         <h2 class="Series_populares">Detalles de series populares</h2>
         <article class="articuloseries1">
-            <h3 class="subtitle">Vikingos</h3>
-            <div class="box">
-                <img class="vikings" src="./img/vikings.png" alt="Vikings">
-                <p class="sinopsis"><strong>Calificación</strong> IMDb: 8,5 <br><strong>Fecha de estreno:</strong> 03/03/2013 <br><strong>Sinopsis:</strong> Vikings
-                está inspirada en las sagas del vikingo Ragnar Lodbrok, uno de los héroes nórdicos legendarios
-                más conocidos y notorio como el flagelo de Inglaterra y Francia. El programa retrata a Ragnar
-                como un granjero que ha conseguido construir barcos revolucionarios con instrumentos de
-                navegación también revolucionarios. <br><strong>Género:</strong><a href="./genres.html" class="a2">Drama Histórico</a></p>
-    
-                <form class="añadirfavorito" action="favoritos.html" method="get">
-                    <div>
-                        <button type="submit" class="button">Añadir a favoritos</button>
-                    </div>
-                 </form>
-            </div>
         </article>
        
 
-<script src="./js/series_detail.js" text="javascript"></script>
+<script src="./js/series_detail.js" type="text/javascript"></script>
 </body>
 
 <br>

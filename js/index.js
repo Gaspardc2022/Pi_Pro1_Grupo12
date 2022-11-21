@@ -145,8 +145,8 @@ fetch(urlTopRated)
         return error;
     })
 
-let formulario = document.querySelector('.buscador');
-let inputBusqueda = document.querySelector('#buscar');
+let formulario = document.querySelector('form');
+let inputBusqueda = document.querySelector('#busqueda');
     
     formulario.addEventListener('submit', function(e) {
         e.preventDefault();

@@ -14,14 +14,12 @@
 <body>
     <header class="encabezado">
 
-        <form class="buscador" action="search_results.html" method="get">
-            <div>
-                <label class="cartel" for="buscar">Buscar:</label>
-                <input id="buscar" type="text" name="buscar" value="">
-            </div>
+        <form action="./search_results.html" method="get">
+            <input type="text" name="busqueda" id="busqueda" placeholder="Buscar">
+            <button type="submit">Enviar</button>
+    
         </form>
         <br>
-
 
         <div class="block">
             <a href="./index.html" class="home"> | Home </a>
@@ -37,33 +35,10 @@
 
     </header>
 
-
-    <section class="containerpadre">
-        <article class="busquedapeliculas">
-            <h2 class="busquedas">Tu busqueda:</h2>
-            <form action="genres.html" method="get">
-                <fieldset>
-                    <legend class="leyendabusqueda">Lo sentimos, su búsqueda no coincide con nuestra base de datos. Pruebe ingresando lo que desea buscar en el siguiente campo:</legend>
-                        <label for="genero">Buscar género:</label>
-                        <input id="genero" type="text" name="genero" value="">
-                </fieldset>
-            </form>
-            <br>
-            <form action="./search_results.html" method="get">
-                <input type="text" name="busqueda" id="busqueda" placeholder="Buscar película">
-                <button type="submit">Enviar</button>
-    
-            </form>
-            <br>
-            <form class="irahome" action="index.html" method="get">
-                <div>
-                    <button type="submit" class="button">Volver al Home</button>
-                </div>
-            </form>
-        </article>
+    <h1 class="busquedaresultados">Resultado de Busqueda</h1>
+    <section id="resultadoBusqueda" class="container">
     </section>
-
-<script src="./js/search_results.js" type="text/javascript"></script>
+    
+    <script src="./js/search_results.js" type="text/javascript"></script>
 </body>
-
 </html>
