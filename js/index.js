@@ -32,9 +32,9 @@ fetch(urlMovies)
                                     <img src="https://image.tmdb.org/t/p/w185/${data.results[i].poster_path}" alt="">
                                 </a>
 
-                                <a href="./favoritos.html?idmisfavoritos=${data.results[i].id}">
+                                <a href="./genres.html?idmisfavoritos=${data.results[i].id}">
                                     <button class="bj">
-                                        Añadir a mis favoritos
+                                        Generos
                                     </button>
                                 </a>
                                
@@ -79,9 +79,9 @@ fetch(urlSeries)
                                     <img src="https://image.tmdb.org/t/p/w185/${data.results[i].poster_path}" alt="">
                             </a>
 
-                            <a href="./favoritos.html?idmisfavoritos=${data.results[i].poster_path}">
+                            <a href="./genres.html?idmisfavoritos=${data.results[i].poster_path}">
                                     <button class="bj">
-                                        Añadir a mis favoritos
+                                        Generos
                                     </button>
                                 </a>
            
@@ -125,9 +125,9 @@ fetch(urlTopRated)
                                     <img src="https://image.tmdb.org/t/p/w185/${data.results[i].poster_path}" alt="">
                                 </a>
 
-                                <a href="./favoritos.html?idmisfavoritos=${data.results[i].title}">
+                                <a href="./genres.html?idmisfavoritos=${data.results[i].title}">
                                     <button class="bj">
-                                        Añadir a mis favoritos
+                                        Generos
                                     </button>
                                 </a>
                                

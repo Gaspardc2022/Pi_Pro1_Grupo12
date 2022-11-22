@@ -89,11 +89,15 @@ fetch(urlRecomendaciones)
                             <a href="./movie_detail.html?idpelicula=${data.results[i].id}">
                                 <h2>Titulo:${data.results[i].title}</h2>
                             </a>
+
+                            <a href="./movie_detail.html?idpelicula=${data.results[i].id}">
+                                <h3>${data.results[i].release_date}</h3>
+                            </a>
                             
                             <a href="./movie_detail.html?idpelicula=${data.results[i].id}">
                                 <img src="https://image.tmdb.org/t/p/w185/${data.results[i].poster_path}" alt="">
                             </a>
-                           
+    
                         </article>`
     
         

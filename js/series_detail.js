@@ -116,15 +116,19 @@ fetch(urlRecomendaciones)
         let allMovies = ""
         for (let i=0; i< 5 ; i ++) {
             console.log(data.results[i]);
-            allMovies +=    `<article class= "unaserie">
-                                <a href="./series_detail.html?idpelicula=${data.results[i].id}">
+            allMovies +=    `<article class= "unapeli">
+                                <a href="./series_detail.html?idseries=${data.results[i].id}">
                                     <h2>Titulo:${data.results[i].name}</h2>
                                 </a>
-                                
-                                <a href="./series_detail.html?idpelicula=${data.results[i].id}">
-                                    <img src="https://image.tmdb.org/t/p/w185/${data.results[i].poster_path}" alt="">
+
+                                <a href="./series_detail.html?idseries=${data.results[i].id}">
+                                    <h3>${data.results[i].first_air_date}</h3>
                                 </a>
-                            
+
+                                <a href="./series_detail.html?idseries=${data.results[i].id}">
+                                        <img src="https://image.tmdb.org/t/p/w185/${data.results[i].poster_path}" alt="">
+                                </a>
+
                             </article>`
         
             
