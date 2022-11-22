@@ -27,8 +27,8 @@ fetch(`https://api.themoviedb.org/3/movie/${favoritesmovie[i]}?api_key=${apiKey}
         console.log(data);
     listapeliculas.innerHTML +=`
                                 <article class="articulofavoritos">
-                                <a href="./movie_detail.html?idpelicula=${data.id}"><h3>${data.title}</h3></a>
-                                <a href="./movie_detail.html?idpelicula=${data.id}"><img class="RyF5" src="https://image.tmdb.org/t/p/w185/${data.poster_path}" alt="${data.title}"></a>
+                                    <a href="./movie_detail.html?idpelicula=${data.id}"><h3>${data.title}</h3></a>
+                                    <a href="./movie_detail.html?idpelicula=${data.id}"><img class="RyF5" src="https://image.tmdb.org/t/p/w185/${data.poster_path}" alt="${data.title}"></a>
                                 </article>
                                 `
 
