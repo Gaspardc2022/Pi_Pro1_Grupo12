@@ -1,39 +1,58 @@
-let url = `
-https://api.themoviedb.org/3/search/multi?api_key=74fa5f666f80e0a07da9241346d3088b&language=en-US&query=busqueda&page=1&include_adult=false&region=es`;
+let apikey              = "74fa5f666f80e0a07da9241346d3088b"
+let form            = document.querySelector("form");
+let barrabuscador   = document.querySelector("[name=busqueda]");
 
-fetch(url)
+
+console.log(barrabuscador.value);
+
+form.addEventListener("submit", function(e) {
+    
+        e.preventDefault();
+        console.log(barrabuscador.value);
+    
+        if(barrabuscador.value == ""){
+            alert("Debe ingresar texto");
+        } else if(barrabuscador.value.length < 3){
+            alert("Ingresar como mínimo 3 caracteres");
+        } else {
+            this.submit();
+        }
+    
+    })
+
+
+let qs              = location.search;
+let qsobject        = new URLSearchParams(qs);
+let caracter        = qsobject.get("busqueda");
+console.log(caracter);
+
+let h1          = document.querySelector("h1");
+h1.innerText    = `Resultados de búsqueda para: ${caracter}`
+
+
+
+//Fetch resultados de búsqueda series
+const resultadoseries  = `https://api.themoviedb.org/3/search/tv?api_key=${apikey}&language=en-US&page=1&query=${qs}&include_adult=false`
+fetch(resultadoseries)
     .then(function (response) {
         return response.json();
     })
 
     .then(function (data) {
 
+        let container1      = document.querySelector(".container");
+        let allSeries       = "";
+        for (let i=0; i< 5 ; i ++) {
+            allSeries        +=    `<article class= "unapeli">
+                                        <h2>Titulo:${data.results[i].title}</h2>
+                                        <h3>${data.results[i].first_air_date}</h3>
+                                        <img src="https://image.tmdb.org/t/p/w185/${data.results[i].poster_path}" alt="">
+                                    </article>`
+                  
         
-        let container1  = document.querySelector(".container");
-        let allMovies   = "";
-        for (let i=0; i< 3 ; i ++) {
-            console.log(data.results[i]);
-            allMovies +=    `<article class= "unapeli">
-                                <a href="./search_results.html?idbusqueda=${data.results[i].id}">
-                                    <h2>Titulo:${data.results[i].title}</h2>
-                                </a>
-
-                                <a href="./movie_detail.html?idimagen=${data.results[i].id}">
-                                    <img src="https://image.tmdb.org/t/p/w185/${data.results[i].poster_path}" alt="">
-                                </a>
-
-                                <a href="./favoritos.html?idmisfavoritos=${data.results[i].id}">
-                                    <button class="bj">
-                                        Añadir a mis favoritos
-                                    </button>
-                                </a>
-                               
-                            </article>`
-        
-            
+        container1.innerHTML += allSeries;
         }
-        container1.innerHTML += allMovies;
-
+        console.log(data);
         return data;
 
     })
@@ -41,3 +60,38 @@ fetch(url)
         console.log(error);
         return error;
     })
+
+
+const busquedapelis  = `https://api.themoviedb.org/3/search/tv?api_key=${apikey}&language=en-US&page=1&query=${qs}include_adult=false`
+fetch(busquedapelis)
+    .then(function (response) {
+        return response.json();
+    })
+
+    .then(function (data) {
+
+        let container2      = document.querySelector(".container");
+        let allMovies       = "";
+        for (let i=0; i< 5 ; i ++) {
+            allMovies +=    `<article class= "unapeli">
+  
+                                <h2>Titulo:${data.results[i].title}</h2>
+
+                                <h3>${data.results[i].release_date}</h3>
+                                <img src="https://image.tmdb.org/t/p/w185/${data.results[i].poster_path}" alt="">
+                            
+                            </article>`
+        
+            
+        
+        container2.innerHTML += allMovies;
+        }
+        return data;
+
+    })
+    .catch(function (error) {
+        console.log(error);
+        return error;
+    })
+
+
