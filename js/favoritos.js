@@ -67,3 +67,8 @@ fetch(`https://api.themoviedb.org/3/tv/${favoritesseries[i]}?api_key=${apiKey}`)
     })
         }
     }
+
+    window.addEventListener("load",function(){
+        document.getElementById("loader").classList.toggle("loader2")
+    
+    })

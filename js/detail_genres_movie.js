@@ -43,3 +43,8 @@ fetch(url)
     .catch(function(error){
 		console.log('El error fue: ' + error);
     }) 
+
+    window.addEventListener("load",function(){
+        document.getElementById("loader").classList.toggle("loader2")
+    
+    })

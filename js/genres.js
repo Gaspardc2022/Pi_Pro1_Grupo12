@@ -52,3 +52,8 @@ fetch(`https://api.themoviedb.org/3/genre/tv/list?api_key=74fa5f666f80e0a07da924
 	.catch(function(error) {
 		console.log('El error fue: ' + error);
 	})
+
+	window.addEventListener("load",function(){
+		document.getElementById("loader").classList.toggle("loader2")
+	
+	})
